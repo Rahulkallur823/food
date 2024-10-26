@@ -35,11 +35,14 @@ cloudinary.v2.config({
 
 
 // CORS configuration
+// CORS configuration
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: ["http://localhost:5173", "https://foodapprahul.netlify.app"], // Allow both local and production URLs
   methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
   credentials: true,
 };
+
+
 
 app.use(cors(corsOptions));
 app.options("*", cors(corsOptions)); // Handle preflight requests
